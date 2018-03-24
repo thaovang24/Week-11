@@ -2,8 +2,44 @@
 #
 #
 #
+echo "This will show you all the network interface configuration: using command ifconfig -a"
 ifconfig -a 
+#
+#
+echo "Press <enter>"
+read   #this pause the script and you need to press <enter>
+
+echo " This will ping google.com for 1 time: "
 ping -c 1 google.com
 #
 #
+echo "press <enter>"
+read  #pauses script
+#
+#
+echo "use command route -n to print route tables:"
 route -n
+#
+#
+echo " the command traceroute will trace hops to the next router to reach the destination."
+traceroute google.com
+echo "press <enter>"
+read
+#
+#
+echo " this command traceroute -n <hostname> will use ip address only and not hostname: "
+traceroute -n google.com
+#
+#
+echo " the <host> command retrieved dns information: "
+host google.com
+#
+#
+nslookup -debug localhost
+#
+#
+#
+read
+echo " if you want to repeat the script type <!!> :"
+
+
