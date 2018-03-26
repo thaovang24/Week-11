@@ -21,7 +21,7 @@ echo "use command route -n to print route tables:"
 route -n
 #
 #
-echo " the command traceroute will trace hops to the next router to reach the destination."
+echo " the command traceroute will trace hops to the next router to reach the destination:"
 traceroute google.com
 echo "press <enter>"
 read
@@ -33,13 +33,24 @@ traceroute -n google.com
 #
 echo " the <host> command retrieved dns information: "
 host google.com
-#
-#
 nslookup -debug localhost
 #
 #
+echo " below is the commnand to manually configure network address is 'ifconfig interface address netmask mask': "
+ifconfig lo0 127.0.0.1/24 gw 192.168.2.1
 #
-read
-echo " if you want to repeat the script type <!!> :"
-
-
+#
+echo " command to remove the default route 'route del -net default: '"
+route del -net default
+#
+#
+echo " command to add new route 'route add -net 192.168.2.0/24 gw 192.168.2.1
+route add -net 192.168.2.0/24 gw 192.168.2.1
+#
+#
+echo " display host files for dns: "
+host /etc/hosts
+#
+#
+echo " command to show dhcp leases for eth0:"
+dhclient eth0
