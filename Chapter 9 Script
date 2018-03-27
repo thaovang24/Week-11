@@ -54,3 +54,12 @@ host /etc/hosts
 #
 echo " command to show dhcp leases for eth0:"
 dhclient eth0
+#
+#
+echo " This command is used to print the ip and mac address of it's cache table: "
+arp -n
+#
+#
+read
+echo " if you want to repeat the script type <!!> :"
+
